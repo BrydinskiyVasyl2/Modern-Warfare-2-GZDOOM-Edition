@@ -1,0 +1,4 @@
+Gameinfo
+{
+PlayerClasses = "MW2Ghost", "MW2Ghost2", "MW2Ghost3", "MW2Ghost4"
+}

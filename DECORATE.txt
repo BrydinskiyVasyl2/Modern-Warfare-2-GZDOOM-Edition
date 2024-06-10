@@ -1,0 +1,189 @@
+ACTOR MW2Ghost : DoomPlayer
+{
+  Player.DisplayName "Ghost"
+  Player.StartItem "DesertEagle"
+  Player.StartItem "CombatKnife"
+  Player.StartItem "F2000Loaded" 30
+  Player.StartItem "ACRAmmoLoaded" 30
+  Player.StartItem "ShotgunLoaded" 4
+  Player.StartItem "UMP45Loaded" 45
+  Player.StartItem "DeagleLoaded" 7
+  Player.StartItem "DeagleAmmo", 50
+  Scale 0.6
+
+  States
+  {
+  Spawn:
+    RAN3 F -1
+    Loop
+  See:
+    RAN3 ABCD 4 
+    Loop
+  Missile:
+    RAN3 E 12
+    Goto Spawn
+  Melee:
+    RAN3 E 6 BRIGHT
+    Goto Missile
+  Pain:
+    RAN3 G 4 
+    RAN3 G 4 A_Pain
+    Goto Spawn
+  Death:
+    RAN3 H 10
+    RAN3 I 10 A_PlayerScream
+    RAN3 J 10 A_NoBlocking
+    RAN3 K 10
+    RAN3 L -1
+    Stop
+ }
+}
+
+ACTOR MW2Ghost2 : DoomPlayer
+{
+  Player.DisplayName "Ghost With UMP45"
+  Player.StartItem "UMP45"
+  Player.StartItem "DesertEagle"
+  Player.StartItem "CombatKnife"
+  Player.StartItem "F2000Loaded" 30
+  Player.StartItem "ACRAmmoLoaded" 30
+  Player.StartItem "ShotgunLoaded" 4
+  Player.StartItem "UMP45Loaded" 45
+  Player.StartItem "DeagleLoaded" 7
+  Player.StartItem "UMP45Ammo" 90
+  Player.StartItem "DeagleAmmo", 50
+  Scale 0.6
+
+  States
+  {
+  Spawn:
+    RAN3 F -1
+    Loop
+  See:
+    RAN3 ABCD 4 
+    Loop
+  Missile:
+    RAN3 E 12
+    Goto Spawn
+  Melee:
+    RAN3 E 6 BRIGHT
+    Goto Missile
+  Pain:
+    RAN3 G 4 
+    RAN3 G 4 A_Pain
+    Goto Spawn
+  Death:
+    RAN3 H 10
+    RAN3 I 10 A_PlayerScream
+    RAN3 J 10 A_NoBlocking
+    RAN3 K 10
+    RAN3 L -1
+    Stop
+ }
+}
+
+ACTOR MW2Ghost3 : DoomPlayer
+{
+  Player.DisplayName "Ghost With ACR"
+  Player.StartItem "ACR"
+  Player.StartItem "DesertEagle"
+  Player.StartItem "CombatKnife"
+  Player.StartItem "F2000Loaded" 30
+  Player.StartItem "ACRAmmoLoaded" 30
+  Player.StartItem "ShotgunLoaded" 4
+  Player.StartItem "UMP45Loaded" 45
+  Player.StartItem "DeagleLoaded" 7
+  Player.StartItem "ACRAmmo", 60
+  Player.StartItem "DeagleAmmo", 50
+  Scale 0.6
+
+  States
+  {
+  Spawn:
+    RAN3 F -1
+    Loop
+  See:
+    RAN3 ABCD 4 
+    Loop
+  Missile:
+    RAN3 E 12
+    Goto Spawn
+  Melee:
+    RAN3 E 6 BRIGHT
+    Goto Missile
+  Pain:
+    RAN3 G 4 
+    RAN3 G 4 A_Pain
+    Goto Spawn
+  Death:
+    RAN3 H 10
+    RAN3 I 10 A_PlayerScream
+    RAN3 J 10 A_NoBlocking
+    RAN3 K 10
+    RAN3 L -1
+    Stop
+ }
+}
+
+ACTOR MW2Ghost4 : DoomPlayer
+{
+  Player.DisplayName "Ghost With F2000"
+  Player.StartItem "F2000"
+  Player.StartItem "DesertEagle"
+  Player.StartItem "CombatKnife"
+  Player.StartItem "F2000Loaded" 30
+  Player.StartItem "ACRAmmoLoaded" 30
+  Player.StartItem "ShotgunLoaded" 4
+  Player.StartItem "UMP45Loaded" 45
+  Player.StartItem "DeagleLoaded" 7
+  Player.StartItem "F2000Ammo", 60
+  Player.StartItem "DeagleAmmo", 50
+  Scale 0.6
+
+  States
+  {
+  Spawn:
+    RAN3 F -1
+    Loop
+  See:
+    RAN3 ABCD 4 
+    Loop
+  Missile:
+    RAN3 E 12
+    Goto Spawn
+  Melee:
+    RAN3 E 6 BRIGHT
+    Goto Missile
+  Pain:
+    RAN3 G 4 
+    RAN3 G 4 A_Pain
+    Goto Spawn
+  Death:
+    RAN3 H 10
+    RAN3 I 10 A_PlayerScream
+    RAN3 J 10 A_NoBlocking
+    RAN3 K 10
+    RAN3 L -1
+    Stop
+ }
+}
+
+Actor PistolSpawner : RandomSpawner Replaces Pistol
+{
+DropItem "DesertEagle"
+}
+
+Actor ChainsawSpawner : RandomSpawner Replaces Chainsaw
+{
+DropItem "UMP45"
+}
+
+Actor ChaingunSpawner : RandomSpawner Replaces Chaingun
+{
+DropItem "ACR"
+}
+
+Actor F2000Spawner : RandomSpawner Replaces PlasmaRifle
+{
+DropItem "F2000"
+}
